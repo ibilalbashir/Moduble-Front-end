@@ -1,0 +1,43 @@
+<div class="content">
+  <nav class="top-nav navbar navbar-expand-lg bg-transparent ">
+    <a class="navbar-brand" href="#"><img src="../../../assets/logo.png" alt=""></a>
+
+    <div class="nav-item ml-auto">
+      <button [routerLink]="['/login']" routerLinkActive="router-link-active"
+        class="nav-link btn logout-btn">logout</button>
+    </div>
+
+  </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="offset-4 col-4 text-center">
+
+        <p><b>Keep it clean and simple</b></p><br>
+        <p>Upload a clean thumbnail image. This is how your asset will appear in search results.</p><br>
+        <div class="card">
+
+          <div class="card-body">
+            <img src="../../../assets/cloud.png" alt="">
+            <p style="color: red;">Browse</p>
+
+          </div>
+
+          <div style="background: #E5E5E5;" class="card-footer border-0 text-muted">
+            PNG, JPG
+            <br>
+            Min Resolution 840 x 600 1.4:1 <br>
+            Size 10 MB Max
+          </div>
+
+        </div>
+
+        <button (click)="openDialog()" class="publish-btn btn">publish <i class="fas fa-globe-europe"></i></button>
+        <br><br><br><br>
+        <br><br> <br><br>
+
+      </div>
+    </div>
+  </div>
+</div>

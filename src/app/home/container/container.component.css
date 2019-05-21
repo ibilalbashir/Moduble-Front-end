@@ -1,0 +1,30 @@
+.navLinks{
+  color: black;
+}
+
+.sign-up-btn{
+  background: #FF2C00;
+  color: white;
+  border-radius: 20px;
+  height: 35px;
+  padding-top: 3px;
+}
+
+.content{
+  background: #F4F4F4;
+}
+
+.search-box{
+  width: 100%;
+}
+
+
+
+
+@media (min-width: 1200px){
+  .my-container{
+    max-width: 1366px !important;
+  }
+}
+
+

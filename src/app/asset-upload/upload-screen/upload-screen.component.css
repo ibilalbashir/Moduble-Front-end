@@ -1,0 +1,52 @@
+.submit-btn{
+  color: white;
+  background-color:black;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 21px;
+  border: none;
+  width: 106px;
+  height: 35px;
+  padding: 2px;
+}
+.logout-btn{
+  background: black;
+  color: white;
+  border-radius: 20px;
+  margin-right: 50px;
+  width: 106px;
+  height: 35px;
+  padding: 2px;
+}
+
+
+.content{
+  background: #F4F4F4;
+}
+
+.card-logo{
+  width: 265px;
+  height: 225px;
+}
+
+.top-nav{
+  padding-top: 45px;
+  padding-left: 45px;
+}
+
+.details{
+  font-size: 11px;
+    color: #555555;
+}
+
+.publish-btn{
+  color:white;
+  background: black;
+  border-radius: 20px;
+  margin-top: 40px;
+  font-size: 12px;
+}

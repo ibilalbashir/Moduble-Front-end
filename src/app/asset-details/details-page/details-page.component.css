@@ -1,0 +1,89 @@
+.submit-btn{
+  color: white;
+  background-color:black;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 21px;
+  border: none;
+  width: 106px;
+  height: 35px;
+  padding: 2px;
+}
+input[type="file"] {
+  display: none;
+}
+.custom-file-upload {
+  border: none;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  padding-left: 50px;
+  width: 100%;
+  background: white;
+}
+.logout-btn{
+  background: black;
+  color: white;
+  border-radius: 20px;
+  margin-right: 50px;
+  width: 106px;
+  height: 35px;
+  padding: 2px;
+}
+
+.content{
+  background: #F4F4F4;
+}
+
+.card-logo{
+  width: 265px;
+  height: 225px;
+}
+
+.top-nav{
+  padding-top: 45px;
+  padding-left: 45px;
+}
+
+.details{
+  font-size: 11px;
+    color: #555555;
+}
+
+.cloud-icon{
+  position: absolute;
+  left: 22%;
+  bottom: 38%;
+}
+
+.cloud-btn{
+  background: white;
+  width: 100%;
+  height: 45px;
+}
+
+.option-card{
+  width: 18rem;
+  height: 9rem;
+
+}
+
+.grey-font{
+color: grey;
+font-size: 10px;
+}
+.svg{
+  font-size: 9px;
+    color: grey;
+    position: absolute;
+    right: 27px;
+    padding-top: 6px;
+}
+
+.card{
+  cursor: pointer;
+}

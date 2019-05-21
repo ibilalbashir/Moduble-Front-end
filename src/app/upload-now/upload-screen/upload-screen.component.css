@@ -1,0 +1,170 @@
+.submit-btn{
+  color: white;
+  background-color:black;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  border: none;
+
+  padding: 10px;
+  width: 260px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.content{
+  background: #F4F4F4;
+}
+
+.card-logo{
+  width: 265px;
+  height: 225px;
+}
+
+.top-nav{
+  padding-top: 45px;
+  padding-left: 45px;
+}
+
+.details{
+  font-size: 14px;
+    color: #555555;
+}
+
+.logout-btn{
+  background: black;
+  color: white;
+  border-radius: 20px;
+  margin-right: 50px;
+  width: 106px;
+  height: 35px;
+  padding: 2px;
+}
+
+.invite-link{
+  color: black;
+  margin: 20px;
+}
+
+
+/*new css for timline */
+
+.demo
+{
+	padding: 100px 0;
+}
+.heading-title
+{
+	margin-bottom: 50px;
+}
+.main-timeline{
+    position: relative;
+    transition: all 0.4s ease 0s;
+}
+
+.main-timeline:before{
+    content: "";
+    width: 1px;
+    height: 100%;
+    background: #bfbfbf;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+
+.main-timeline .timeline{
+    position: relative;
+}
+
+.main-timeline .timeline:before,
+.main-timeline .timeline:after{
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+
+.main-timeline .timeline-icon{
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background:#CBCBCB;
+
+    position: absolute;
+    top: 0;
+    left: 3px;
+    right: 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.main-timeline .timeline-content{
+    width: 45%;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: right;
+
+    transition: all 0.3s ease 0s;
+}
+
+.main-timeline .date{
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    color: #fff;
+    padding: 12px 33px;
+    background: #0a90d7;
+    border-radius: 30px;
+}
+
+.main-timeline .title{
+    /* font-size: 24px; */
+    font-weight: 500;
+    color: black;
+    /* margin-top: 30px; */
+}
+
+.main-timeline .description{
+    font-size: 14px;
+    color: #606060;
+    line-height: 2;
+}
+
+.main-timeline .timeline-content.right{
+    float: right;
+    text-align: left;
+}
+
+.shift-right{
+  float: right;
+  margin-top: -51px;
+  margin-right: 8%;
+}
+.shift-left{
+  margin-left: 8%;
+}
+.grey-box{
+  height: 286px !important;
+  width: 400px !important;
+  background: #F4F4F4;
+}
+@media only screen and (max-width: 767px){
+    .main-timeline:before{
+        left: 0;
+    }
+    .main-timeline .timeline-icon{
+        left: -8px;
+        margin: 0;
+    }
+    .main-timeline .timeline-content{
+        width: 90%;
+        float: right;
+    }
+}
+
+

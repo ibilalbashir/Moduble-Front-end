@@ -1,0 +1,135 @@
+<div class="content">
+  <nav class="top-nav navbar navbar-expand-lg bg-transparent ">
+    <a class="navbar-brand" href="#"><img src="../../../assets/logo.png" alt=""></a>
+
+    <div class="nav-item ml-auto">
+      <button [routerLink]="['/login']" routerLinkActive="router-link-active"
+        class="nav-link btn logout-btn">logout</button>
+    </div>
+
+  </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="offset-2 col-4">
+        <p><b>Select your asset</b></p>
+
+        <p class="grey-font">Please select an asset you are uploading to the marketplace.</p>
+        <div class="card option-card" (click)="componentSelected()">
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-8">
+                <h6 class="card-title" [ngStyle]="{'color': componentColor}">Component</h6>
+                <p class="card-text grey-font">Must Contain One element</p>
+                <p><i>See example</i></p>
+              </div>
+              <div class="col-4">
+                <svg [ngStyle]="{'fill': componentIcon}" xmlns="http://www.w3.org/2000/svg" width="73.87"
+                  height="57.207" viewBox="0 0 73.87 57.207">
+                  <defs>
+                    <style>
+
+                    </style>
+                  </defs>
+                  <g transform="translate(-743.604 -455)">
+                    <g transform="translate(-13169 -239)">
+                      <rect class="a" width="73.87" height="44" rx="5" transform="translate(13912.604 694)" />
+                    </g>
+                    <path class="a" d="M14167.883,499l-14.207,14.207V499Z" transform="translate(-13387 -1)" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="card option-card" (click)="cardSelected()">
+
+          <div class="card-body">
+            <div class="row">
+              <div class="col-8">
+                <h5 class="card-title" [ngStyle]="{'color': cardColor}">Card</h5>
+                <p class="card-text grey-font">Contains multiple elements</p>
+                <p><i>See example</i></p>
+              </div>
+              <div class="col-4">
+                <svg [ngStyle]="{'fill': cardIcon}" xmlns="http://www.w3.org/2000/svg" width="73.865" height="44"
+                  viewBox="0 0 73.865 44">
+                  <defs>
+                    <style>
+                      .b {
+                        fill: #fff;
+                      }
+                    </style>
+                  </defs>
+                  <g transform="translate(-13918 -881)">
+                    <rect class="a" width="73.865" height="44" rx="5" transform="translate(13918 881)" />
+                    <g transform="translate(256 148)">
+                      <rect class="b" width="24.832" height="2.614" rx="1.307"
+                        transform="translate(13685.348 742.713)" />
+                      <rect class="b" width="24.832" height="2.614" rx="1.307"
+                        transform="translate(13685.348 747.941)" />
+                      <rect class="b" width="12.198" height="12.198" rx="6.099"
+                        transform="translate(13670.099 740.535)" />
+                    </g>
+                    <rect class="b" width="21.851" height="9.198" rx="4.599" transform="translate(13961.305 907.703)" />
+                  </g>
+                </svg>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div style="padding-left: 70px;" class=" border-left col-4">
+
+
+        <p><b>Add details</b></p>
+        <p class="grey-font">Please refer to the guide to ensure proper <br> uploading guidelines</p>
+        <form>
+          <div class="form-group">
+
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Title">
+
+          </div>
+          <div class="form-group border" style="background: white">
+            <tag-input [placeholder]="'Enter a New Tag'" [secondaryPlaceholder]="'Enter Tags'"
+              [theme]="'foundation-theme'" [(ngModel)]='items' name="tags" [editable]='true' [maxItems]='5'
+              (onTagEdited)="onTagEdited($event)">
+            </tag-input>
+          </div>
+
+          <div class="form-group">
+
+            <textarea type="text" class="form-control" placeholder="Description">
+              </textarea>
+
+          </div>
+          <!-- <button class="cloud-btn btn"><i class="fas fa-cloud-upload-alt cloud-icon"></i><b>Upload your
+              asset</b> <span><i class="svg"> SVG</i></span></button> -->
+          <label for="file-upload" class="custom-file-upload">
+            <i class="fas fa-cloud-upload-alt cloud-icon"></i> <b>Upload your asset</b> <span><i class="svg">
+                SVG</i></span>
+          </label>
+          <input id="file-upload" accept=".svg" type="file" />
+
+          <p class="grey-font" style="margin-top: 10px;">Make sure your asset can be easily ungrouped and is fully
+            customizable.</p>
+
+
+        </form><br> <button [routerLink]="['/assetupload']" routerLinkActive="router-link-active"
+          class="btn submit-btn">Continue</button>
+
+        <br><br><br>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br> <br><br>
+</div>
