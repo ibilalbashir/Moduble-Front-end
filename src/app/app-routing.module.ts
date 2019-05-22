@@ -17,28 +17,23 @@ const routes: Routes = [
   },
   {
     path: 'invite',
-    loadChildren: './subscription/subscription.module#SubscriptionModule',
-    canActivate: [AuthGuard]
+    loadChildren: './subscription/subscription.module#SubscriptionModule'
   },
   {
     path: 'upload',
-    loadChildren: './upload-now/upload-now.module#UploadNowModule',
-    canActivate: [AuthGuard]
+    loadChildren: './upload-now/upload-now.module#UploadNowModule'
   },
   {
     path: 'assets',
-    loadChildren: './asset-details/asset-details.module#AssetDetailsModule',
-    canActivate: [AuthGuard]
+    loadChildren: './asset-details/asset-details.module#AssetDetailsModule'
   },
   {
     path: 'assetupload',
-    loadChildren: './asset-upload/asset-upload.module#AssetUploadModule',
-    canActivate: [AuthGuard]
+    loadChildren: './asset-upload/asset-upload.module#AssetUploadModule'
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomeModule',
-    canActivate: [AuthGuard]
+    loadChildren: './home/home.module#HomeModule'
   }
 ];
 
