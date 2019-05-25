@@ -34,7 +34,7 @@ export class SubScreenComponent implements OnInit {
       return;
     }
 
-    console.log(this.registerForm.value);
+
     this.obj = this.registerForm.value;
 
     this._invitationService.sendInvitation(this.obj).subscribe(res => {

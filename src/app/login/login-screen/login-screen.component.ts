@@ -39,7 +39,8 @@ export class LoginScreenComponent implements OnInit {
 
       this._router.navigate(['/upload']);
       console.log(res);
-      localStorage.setItem('token', res['id'])
+      localStorage.setItem('token', res['id']);
+      localStorage.setItem('userId', res['userId']);
 
     }, err => {
       alert('wrong credentials')
