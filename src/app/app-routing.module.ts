@@ -23,17 +23,22 @@ const routes: Routes = [
   },
   {
     path: 'upload',
-    loadChildren: './upload-now/upload-now.module#UploadNowModule'
+    loadChildren: './upload-now/upload-now.module#UploadNowModule',
+    canActivate: [AuthGuard]
   },
   {
     path: 'assets',
     loadChildren: './asset-details/asset-details.module#AssetDetailsModule',
-
+    canActivate: [AuthGuard]
   },
   {
     path: 'assetupload',
-    loadChildren: './asset-upload/asset-upload.module#AssetUploadModule'
-
+    loadChildren: './asset-upload/asset-upload.module#AssetUploadModule',
+    canActivate: [AuthGuard]
+  }, {
+    path: 'examples',
+    loadChildren: "./example/example.module#ExampleModule",
+    canActivate: [AuthGuard]
   },
   {
     path: 'home',

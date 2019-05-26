@@ -17,4 +17,7 @@ export class UploadService {
     formData.append('file', file);
     return this.http.post(`${this.url}/attachments/${container}/upload`, formData);
   }
+  createUploadRecordFn(obj): Observable<Object> {
+    return this.http.post(`${this.url}/Uploads`, obj)
+  }
 }

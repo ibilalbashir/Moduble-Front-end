@@ -1,6 +1,7 @@
 import { ConfirmtionDialogComponent } from './../confirmtion-dialog/confirmtion-dialog.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-upload-screen',
@@ -9,10 +10,25 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class UploadScreenComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  order: string;
+
+  url;
+  constructor(public dialog: MatDialog, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      console.log(params); // {order: "popular"}
+      this.url = params.url;
+      this.order = params.order;
+
+      console.log('order is', params); // popular
+    });
   }
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId')
+  }
+
 
   openDialog(): void {
     const dialogRef = this.dialog.open(ConfirmtionDialogComponent, {

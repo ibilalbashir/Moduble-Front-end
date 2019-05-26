@@ -14,10 +14,10 @@ export class AuthGuard implements CanActivate {
   }
   canActivate(): boolean {
     if (this.AuthService.loggedIn()) {
-      this.router.navigate(['/upload'])
+
       return true;
     } else {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/'])
       return false;
     }
   }

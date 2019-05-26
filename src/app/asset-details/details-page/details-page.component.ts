@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 import { UploadService } from './../../../Shared/services/upload.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -18,7 +20,8 @@ export class DetailsPageComponent implements OnInit {
   componentIcon = "red";
   type = "component";
   finalObj = {};
-  constructor(private formBuilder: FormBuilder, private uploadService: UploadService) { }
+  url;
+  constructor(private formBuilder: FormBuilder, private uploadService: UploadService, private _router: Router) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -59,21 +62,33 @@ export class DetailsPageComponent implements OnInit {
   onSubmit() {
 
 
-    this.uploadService.uploadFn("container", this.registerForm.value['file']).subscribe(res => {
+    this.uploadService.uploadFn("attachments", this.images[0]).subscribe(res => {
       console.log('file uploaded ', res);
+      let fileName = res.result.files.file[0].name;
+      fileName = fileName.replace(/ /g, "%20");
+      this.url = environment.url + '/attachments/attachments/download/' + fileName;
+      console.log('url is ', this.url);
+      this.submitted = true;
+      this.finalObj = this.registerForm.value;
+      this.finalObj['type'] = this.type;
+      this.finalObj['uploadedBy'] = localStorage.getItem('userId');
+      this.finalObj['fileUrl'] = this.url;
+      console.log('finalObj is ', this.finalObj)
+
+      this.uploadService.createUploadRecordFn(this.finalObj).subscribe(resp => {
+        console.log('record created', resp);
+        this._router.navigate(['assetupload'], { queryParams: { url: this.url } });
+      }, error => {
+        console.log(error)
+      })
     }, err => {
       console.log(err)
     })
-    this.submitted = true;
-    this.finalObj = this.registerForm.value;
-    this.finalObj['type'] = this.type;
-    this.finalObj['uploadedBy'] = localStorage.getItem('userId');
+
 
     // stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
-    } else {
-      console.log(this.finalObj)
     }
 
 

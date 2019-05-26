@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { routerNgProbeToken } from '@angular/router/src/router_module';
-
+declare var swal: any;
 @Component({
   selector: 'app-sub-screen',
   templateUrl: './sub-screen.component.html',
@@ -42,7 +42,7 @@ export class SubScreenComponent implements OnInit {
 
     this._invitationService.sendInvitation(this.obj).subscribe(res => {
       console.log('email invitaiton resp ', res);
-      this._router.navigate(['/earlyaccess'], { queryParams: { id: res['id'] } });
+      swal('A Verification Email Has been sent to your email address')
 
     }, err => {
       alert('Invitation Already Sent to this email')

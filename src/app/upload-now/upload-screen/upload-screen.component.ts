@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
   }
@@ -15,6 +16,9 @@ export class UploadScreenComponent implements OnInit {
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('userId')
+  }
+  loadExamples() {
+    this._router.navigate(['examples'])
   }
 
 }

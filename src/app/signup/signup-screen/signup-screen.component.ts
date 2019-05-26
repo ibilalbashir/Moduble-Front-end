@@ -1,10 +1,11 @@
+import { SignupService } from './../../../Shared/services/signup.service';
 import { SigninService } from './../../../Shared/services/signin.service';
 
 import { InvitationService } from './../../../Shared/services/invitation.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MustMatch } from 'src/helpers/must-match.validators';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 declare var swal: any;
 @Component({
   selector: 'app-signup-screen',
@@ -18,9 +19,9 @@ export class SignupScreenComponent implements OnInit {
   currentEmail;
   finalObj = {};
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: FormBuilder, private _router: Router,
     private route: ActivatedRoute,
-    private _invitationService: InvitationService, private signupService: SigninService
+    private _invitationService: InvitationService, private signupService: SignupService
   ) { }
 
   ngOnInit() {
@@ -64,13 +65,14 @@ export class SignupScreenComponent implements OnInit {
     this.finalObj['email'] = this.currentEmail;
     delete this.finalObj['confirmPassword'];
 
-    this.signupService.signinFn(this.finalObj).subscribe(res => {
+    this.signupService.RegisterLink(this.finalObj).subscribe(res => {
       console.log('signup res', res);
       swal(
         'Good job!',
         'User Created',
         'success'
       )
+      this._router.navigate(['upload'])
     }, err => {
       console.log(err)
     })
