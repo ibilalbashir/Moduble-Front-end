@@ -13,11 +13,13 @@ const routes: Routes = [
   },
   {
     path: 'earlyaccess',
-    loadChildren: './signup/signup.module#SignupModule'
+    loadChildren: './signup/signup.module#SignupModule',
+
   },
   {
     path: 'invite',
-    loadChildren: './subscription/subscription.module#SubscriptionModule'
+    loadChildren: './subscription/subscription.module#SubscriptionModule',
+
   },
   {
     path: 'upload',
@@ -25,11 +27,13 @@ const routes: Routes = [
   },
   {
     path: 'assets',
-    loadChildren: './asset-details/asset-details.module#AssetDetailsModule'
+    loadChildren: './asset-details/asset-details.module#AssetDetailsModule',
+
   },
   {
     path: 'assetupload',
     loadChildren: './asset-upload/asset-upload.module#AssetUploadModule'
+
   },
   {
     path: 'home',

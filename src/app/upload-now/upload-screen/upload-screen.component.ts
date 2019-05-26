@@ -12,4 +12,9 @@ export class UploadScreenComponent implements OnInit {
   ngOnInit() {
   }
 
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId')
+  }
+
 }

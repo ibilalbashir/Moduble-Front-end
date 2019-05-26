@@ -2,7 +2,7 @@ import { Router } from '@angular/router';
 import { SigninService } from './../../../Shared/services/signin.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+declare var swal: any;
 @Component({
   selector: 'app-login-screen',
   templateUrl: './login-screen.component.html',
@@ -37,10 +37,12 @@ export class LoginScreenComponent implements OnInit {
     }
     this._signinSerive.signinFn(this.registerForm.value).subscribe(res => {
 
-      this._router.navigate(['/upload']);
+
       console.log(res);
       localStorage.setItem('token', res['id']);
       localStorage.setItem('userId', res['userId']);
+
+      this._router.navigate(['upload'])
 
     }, err => {
       alert('wrong credentials')

@@ -28,8 +28,8 @@
         friends</a>
     </div>
     <div class="nav-item">
-      <button [routerLink]="['/login']" routerLinkActive="router-link-active"
-        class="nav-link btn logout-btn">logout</button>
+      <button [routerLink]="['/login']" routerLinkActive="router-link-active" class="nav-link btn logout-btn"
+        (click)="logout()">logout</button>
     </div>
 
   </nav>

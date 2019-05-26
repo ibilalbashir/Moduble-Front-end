@@ -8,10 +8,14 @@ import { Injectable } from '@angular/core';
 })
 export class SigninService {
 
-  url = environment.url
+  url = environment.url;
+  token = localStorage.getItem('token')
   constructor(private http: HttpClient) { }
 
   signinFn(obj): Observable<Object> {
     return this.http.post(`${this.url}/ModubleSellers/login`, obj);
+  }
+  logoutFn() {
+    return this.http.post(`${this.url}/ModubleSellers/logout`, this.token)
   }
 }

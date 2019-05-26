@@ -78,4 +78,9 @@ export class DetailsPageComponent implements OnInit {
 
 
   }
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId')
+  }
 }
